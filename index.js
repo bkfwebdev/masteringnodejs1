@@ -1,4 +1,4 @@
-/*
+ /*
  * 
  * Primary file for API
  *
@@ -38,10 +38,10 @@ req.on("end",function(){
   buffer += decoder.end();
 //choose the handler this request should go to
 //if one is not found use the not found handler
-var chooseHandler = typeof(router[trimmedPath]) !== "undefined" ? rounter[trimmedPath] : theHandlers.notFound;
+var chooseHandler = typeof(theRouter[trimmedPath]) !== "undefined" ? theRounter[trimmedPath] : theHandlers.notFound;
 
 //construct the data object to send to the handler
-var data {
+var data = {
 
   "trimmedPath" : trimmedPath,
   "queryStringObject" : queryStringObject,
@@ -97,6 +97,6 @@ theHandlers.notFound = function(data,callback){
 
 // define router
 var theRouter = {
-  "sample":handlers.sample
+  "sample":theHandlers.sample
 }
 
